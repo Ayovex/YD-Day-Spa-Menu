@@ -3,7 +3,7 @@ import "./styles.css";
 const facials = [
   ["White Wine Peel", "$145 | 50 min"],
   ["Glow Hydro Facial", "$175 | 70 min"],
-  ["Ultimate Facial", "$200 | 80 min"],
+  ["Ultimate Facial", "$199 | 80 min"],
   ["Collagen Boosting", "$245"],
   ["Firm Lift", "$285"],
 ];
