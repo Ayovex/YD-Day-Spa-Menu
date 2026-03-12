@@ -37,20 +37,18 @@ const addons = [
 const gallery = [
   {
     title: "Facials",
-    image:
-      "https://images.pexels.com/photos/34930153/pexels-photo-34930153.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    position: "center 45%",
+    image: "/assets/facial.jpg",
+    position: "center 40%",
   },
   {
     title: "Massage",
-    image:
-      "https://images.pexels.com/photos/4599405/pexels-photo-4599405.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    position: "center 52%",
+    image: "/assets/massage.jpg",
+    position: "center 46%",
   },
   {
     title: "Beauty & Spa",
-    image: "https://images.pexels.com/photos/9155584/pexels-photo-9155584.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    position: "center 52%",
+    image: "/assets/beauty-spa.jpg",
+    position: "center 56%",
   },
 ];
 
