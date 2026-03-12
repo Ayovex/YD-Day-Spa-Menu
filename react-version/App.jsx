@@ -38,19 +38,19 @@ const gallery = [
   {
     title: "Facials",
     image:
-      "https://images.unsplash.com/photo-1552511556-9f16dcb6561f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDN8fCUyN3BvcmUlMjBwdXJyaWZpY2F0aW9uJTIwdHJlYXRtZW50JTI3fGVufDB8MHx8fDE3NjM0OTA3ODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    position: "center 35%",
+      "https://images.unsplash.com/photo-1643402305704-474b129161a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    position: "center 42%",
   },
   {
     title: "Massage",
     image:
-      "https://images.unsplash.com/photo-1570174006382-148305ce4972?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDR8fCUyN3JlanV2ZW5hdGlvbiUyMG1hc3NhZ2UlMjBWaWVubmElMjd8ZW58MHwwfHx8MTc2MjM2MzMyNXww&ixlib=rb-4.1.0&q=80&w=1080",
-    position: "center 45%",
+      "https://images.unsplash.com/photo-1649751295468-953038600bef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    position: "center 52%",
   },
   {
     title: "Beauty & Spa",
     image: "https://www.meridianspas.com/cdn/shop/files/cascade2_395x320.jpg?v=1768332676",
-    position: "center",
+    position: "center 40%",
   },
 ];
 
@@ -58,9 +58,8 @@ export default function App() {
   return (
     <main className="screen">
       <header className="header">
-        <img className="brand-logo" src="/logo-mark.svg" alt="YD Day Spa logo" />
         <p className="eyebrow">Wellness Menu</p>
-        <h1 className="hidden-title">YD DAY SPA</h1>
+        <h1>YD DAY SPA</h1>
       </header>
 
       <p className="subtitle">Luxury Wellness Experience</p>
