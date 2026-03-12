@@ -46,7 +46,7 @@
       height: min(94vh, 1012px);
       display: grid;
       grid-template-rows: auto auto 1fr auto auto;
-      gap: 1.8vh;
+      gap: 1.4vh;
       padding: 3.2vh 2.6vw 2.4vh;
       border: 1px solid rgba(200, 169, 106, 0.2);
       border-radius: 32px;
@@ -92,23 +92,23 @@
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1vw;
+      gap: 0.8vw;
       animation: fadeUp 900ms ease-out 120ms both;
     }
 
     .photo-card {
       position: relative;
-      min-height: clamp(140px, 16vh, 200px);
+      min-height: clamp(72px, 9vh, 104px);
       overflow: hidden;
-      border-radius: 26px;
-      box-shadow: var(--shadow);
+      border-radius: 22px;
+      box-shadow: 0 14px 34px rgba(47, 38, 21, 0.07);
       isolation: isolate;
-      transition: transform 260ms ease, box-shadow 260ms ease;
+      transition: transform 220ms ease, box-shadow 220ms ease;
     }
 
     .photo-card:hover {
-      transform: translateY(-4px) scale(1.01);
-      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(47, 38, 21, 0.1);
     }
 
     .photo-card::before {
@@ -116,11 +116,12 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(17, 17, 17, 0.02) 0%, rgba(17, 17, 17, 0.46) 100%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(17, 17, 17, 0.16) 100%),
         var(--image);
       background-size: cover;
       background-position: center;
-      transition: transform 360ms ease;
+      filter: saturate(0.82) brightness(1.02);
+      transition: transform 280ms ease;
       z-index: -2;
     }
 
@@ -128,37 +129,14 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(200, 169, 106, 0.08));
-      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(200, 169, 106, 0.04));
+      border: 1px solid rgba(255, 255, 255, 0.22);
       border-radius: inherit;
       z-index: -1;
     }
 
     .photo-card:hover::before {
-      transform: scale(1.06);
-    }
-
-    .photo-copy {
-      position: absolute;
-      inset: auto 0 0 0;
-      padding: 1.1rem 1.2rem;
-      color: #fffaf2;
-    }
-
-    .photo-label {
-      margin: 0;
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(1.15rem, 1.3vw, 1.6rem);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .photo-note {
-      margin: 0.2rem 0 0;
-      font-size: clamp(0.78rem, 0.78vw, 0.92rem);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255, 250, 242, 0.84);
+      transform: scale(1.03);
     }
 
     .columns {
@@ -410,30 +388,15 @@
       <article
         class="photo-card"
         style="--image: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80');"
-      >
-        <div class="photo-copy">
-          <p class="photo-label">Skincare Rituals</p>
-          <p class="photo-note">Refined facials and glow treatments</p>
-        </div>
-      </article>
+      ></article>
       <article
         class="photo-card"
         style="--image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80');"
-      >
-        <div class="photo-copy">
-          <p class="photo-label">Massage Escape</p>
-          <p class="photo-note">Calm bodywork in a luxury setting</p>
-        </div>
-      </article>
+      ></article>
       <article
         class="photo-card"
         style="--image: url('https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80');"
-      >
-        <div class="photo-copy">
-          <p class="photo-label">Wellness Lounge</p>
-          <p class="photo-note">Soft details, warm light, serene energy</p>
-        </div>
-      </article>
+      ></article>
     </section>
 
     <section class="columns" aria-label="Spa services">

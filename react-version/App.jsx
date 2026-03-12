@@ -36,20 +36,14 @@ const addons = [
 
 const gallery = [
   {
-    title: "Skincare Rituals",
-    note: "Refined facials and glow treatments",
     image:
       "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    title: "Massage Escape",
-    note: "Calm bodywork in a luxury setting",
     image:
       "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    title: "Wellness Lounge",
-    note: "Soft details, warm light, serene energy",
     image:
       "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80",
   },
@@ -66,17 +60,12 @@ export default function App() {
       <p className="subtitle">Luxury Wellness Experience</p>
 
       <section className="gallery" aria-label="Spa atmosphere photos">
-        {gallery.map((item) => (
+        {gallery.map((item, index) => (
           <article
             className="photo-card"
-            key={item.title}
+            key={index}
             style={{ "--image": `url('${item.image}')` }}
-          >
-            <div className="photo-copy">
-              <p className="photo-label">{item.title}</p>
-              <p className="photo-note">{item.note}</p>
-            </div>
-          </article>
+          />
         ))}
       </section>
 
