@@ -60,7 +60,7 @@ export default function App() {
       <header className="header">
         <img className="brand-logo" src="/logo-mark.svg" alt="YD Day Spa logo" />
         <p className="eyebrow">Wellness Menu</p>
-        <h1>YD DAY SPA</h1>
+        <h1 className="hidden-title">YD DAY SPA</h1>
       </header>
 
       <p className="subtitle">Luxury Wellness Experience</p>
