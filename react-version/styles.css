@@ -80,6 +80,78 @@ h1 {
   color: rgba(17, 17, 17, 0.72);
 }
 
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1vw;
+  animation: fadeUp 900ms ease-out 120ms both;
+}
+
+.photo-card {
+  position: relative;
+  min-height: clamp(140px, 16vh, 200px);
+  overflow: hidden;
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+  isolation: isolate;
+  transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.photo-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--shadow-hover);
+}
+
+.photo-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(17, 17, 17, 0.02) 0%, rgba(17, 17, 17, 0.46) 100%),
+    var(--image);
+  background-size: cover;
+  background-position: center;
+  transition: transform 360ms ease;
+  z-index: -2;
+}
+
+.photo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(200, 169, 106, 0.08));
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.photo-card:hover::before {
+  transform: scale(1.06);
+}
+
+.photo-copy {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.1rem 1.2rem;
+  color: #fffaf2;
+}
+
+.photo-label {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.15rem, 1.3vw, 1.6rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.photo-note {
+  margin: 0.2rem 0 0;
+  font-size: clamp(0.78rem, 0.78vw, 0.92rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 250, 242, 0.84);
+}
+
 .columns {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -257,6 +329,10 @@ h1 {
   }
 
   .columns {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
     grid-template-columns: 1fr;
   }
 

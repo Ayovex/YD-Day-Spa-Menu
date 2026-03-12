@@ -1,9 +1,9 @@
 import "./styles.css";
 
 const facials = [
-  ["White Wine Peel", "$145 • 50 min"],
-  ["Glow Hydro Facial", "$175 • 70 min"],
-  ["Ultimate Facial", "$200 • 80 min"],
+  ["White Wine Peel", "$145 | 50 min"],
+  ["Glow Hydro Facial", "$175 | 70 min"],
+  ["Ultimate Facial", "$200 | 80 min"],
   ["Collagen Boosting", "$245"],
   ["Firm Lift", "$285"],
 ];
@@ -18,8 +18,8 @@ const massages = [
 ];
 
 const beautySpa = [
-  ["Head Therapy", ["$119 • 60 min"]],
-  ["Body Scrub + Vichy Shower", ["$99 • 30 min", "$169 • 60 min"]],
+  ["Head Therapy", ["$119 | 60 min"]],
+  ["Body Scrub + Vichy Shower", ["$99 | 30 min", "$169 | 60 min"]],
 ];
 
 const addons = [
@@ -34,6 +34,27 @@ const addons = [
   ["iRobot Massage", "$10"],
 ];
 
+const gallery = [
+  {
+    title: "Skincare Rituals",
+    note: "Refined facials and glow treatments",
+    image:
+      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    title: "Massage Escape",
+    note: "Calm bodywork in a luxury setting",
+    image:
+      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    title: "Wellness Lounge",
+    note: "Soft details, warm light, serene energy",
+    image:
+      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80",
+  },
+];
+
 export default function App() {
   return (
     <main className="screen">
@@ -43,6 +64,21 @@ export default function App() {
       </header>
 
       <p className="subtitle">Luxury Wellness Experience</p>
+
+      <section className="gallery" aria-label="Spa atmosphere photos">
+        {gallery.map((item) => (
+          <article
+            className="photo-card"
+            key={item.title}
+            style={{ "--image": `url('${item.image}')` }}
+          >
+            <div className="photo-copy">
+              <p className="photo-label">{item.title}</p>
+              <p className="photo-note">{item.note}</p>
+            </div>
+          </article>
+        ))}
+      </section>
 
       <section className="columns" aria-label="Spa services">
         <article className="card">
