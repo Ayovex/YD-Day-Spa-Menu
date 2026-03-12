@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YD Day Spa Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --text: #111111;
+      --accent: #c8a96a;
+      --card: rgba(255, 255, 255, 0.74);
+      --border: rgba(17, 17, 17, 0.08);
+      --shadow: 0 24px 60px rgba(47, 38, 21, 0.08);
+      --shadow-hover: 0 28px 70px rgba(47, 38, 21, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: radial-gradient(circle at top, rgba(200, 169, 106, 0.16), transparent 26%),
+        linear-gradient(180deg, #fbf8f4 0%, var(--bg) 42%, #efe8de 100%);
+      color: var(--text);
+      font-family: "Manrope", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.4vh 2vw;
+      overflow: hidden;
+    }
+
+    .screen {
+      width: min(92vw, 1800px);
+      height: min(94vh, 1012px);
+      display: grid;
+      grid-template-rows: auto auto 1fr auto auto;
+      gap: 1.8vh;
+      padding: 3.2vh 2.6vw 2.4vh;
+      border: 1px solid rgba(200, 169, 106, 0.2);
+      border-radius: 32px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.56), rgba(255, 255, 255, 0.28));
+      box-shadow: 0 32px 80px rgba(36, 30, 19, 0.08);
+      backdrop-filter: blur(12px);
+      animation: fadeIn 900ms ease-out both;
+    }
+
+    .header {
+      text-align: center;
+      align-self: end;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.7vh;
+      color: var(--accent);
+      font-size: clamp(0.72rem, 0.8vw, 1rem);
+      font-weight: 700;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 4.4vw, 5.3rem);
+      line-height: 0.95;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      margin: 0;
+      text-align: center;
+      font-size: clamp(1rem, 1.15vw, 1.4rem);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(17, 17, 17, 0.72);
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.3vw;
+      min-height: 0;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 1.6rem 1.4rem;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+      animation: fadeUp 900ms ease-out both;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(200, 169, 106, 0.4);
+    }
+
+    .card:nth-child(2) {
+      animation-delay: 120ms;
+    }
+
+    .card:nth-child(3) {
+      animation-delay: 240ms;
+    }
+
+    .card h2 {
+      margin: 0 0 1rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.7rem, 2vw, 2.45rem);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .section-rule {
+      width: 70px;
+      height: 2px;
+      margin: 0 auto 1rem;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    .service-list,
+    .massage-groups,
+    .addons-grid {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .service-item {
+      display: grid;
+      gap: 0.16rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+    }
+
+    .service-item:last-child,
+    .massage-group:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .service-title,
+    .massage-title {
+      font-size: clamp(0.95rem, 0.98vw, 1.16rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .service-meta,
+    .massage-rate {
+      font-size: clamp(0.86rem, 0.9vw, 1.02rem);
+      color: rgba(17, 17, 17, 0.7);
+    }
+
+    .massage-groups {
+      gap: 0.95rem;
+      overflow: hidden;
+    }
+
+    .massage-group {
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+      display: grid;
+      gap: 0.28rem;
+    }
+
+    .massage-rates {
+      display: grid;
+      gap: 0.18rem;
+    }
+
+    .addons {
+      display: grid;
+      gap: 0.8rem;
+      padding: 1rem 1.4rem 1.1rem;
+      border-radius: 24px;
+      border: 1px solid rgba(200, 169, 106, 0.24);
+      background: rgba(255, 255, 255, 0.58);
+      animation: fadeUp 900ms ease-out 360ms both;
+    }
+
+    .addons-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .addons-header h3 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.5rem, 1.7vw, 2.1rem);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .addons-header::before,
+    .addons-header::after {
+      content: "";
+      width: min(10vw, 160px);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(200, 169, 106, 0.8), transparent);
+    }
+
+    .addons-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.7rem 1rem;
+    }
+
+    .addon-item {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.35rem 0.2rem;
+      border-bottom: 1px solid rgba(17, 17, 17, 0.06);
+      font-size: clamp(0.9rem, 0.92vw, 1.05rem);
+    }
+
+    .addon-item span:last-child {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.1rem 1.5rem;
+      border-radius: 22px;
+      background: linear-gradient(90deg, rgba(17, 17, 17, 0.96), rgba(35, 33, 29, 0.94));
+      color: #f8f4ee;
+      font-size: clamp(0.95rem, 1vw, 1.18rem);
+      letter-spacing: 0.03em;
+      box-shadow: 0 20px 40px rgba(17, 17, 17, 0.18);
+      animation: fadeUp 900ms ease-out 480ms both;
+    }
+
+    .banner strong {
+      color: #f0d7a7;
+      font-weight: 700;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1200px) {
+      body {
+        overflow: auto;
+        padding: 24px;
+      }
+
+      .screen {
+        height: auto;
+      }
+
+      .columns {
+        grid-template-columns: 1fr;
+      }
+
+      .addons-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .screen {
+        width: 100%;
+        padding: 28px 18px 18px;
+        border-radius: 24px;
+      }
+
+      .addons-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .addon-item {
+        padding: 0.45rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="screen">
+    <header class="header">
+      <p class="eyebrow">Wellness Menu</p>
+      <h1>YD DAY SPA</h1>
+    </header>
+
+    <p class="subtitle">Luxury Wellness Experience</p>
+
+    <section class="columns" aria-label="Spa services">
+      <article class="card">
+        <h2>Facials</h2>
+        <div class="section-rule"></div>
+        <div class="service-list">
+          <div class="service-item">
+            <div class="service-title">White Wine Peel</div>
+            <div class="service-meta">$145 • 50 min</div>
+          </div>
+          <div class="service-item">
+            <div class="service-title">Glow Hydro Facial</div>
+            <div class="service-meta">$175 • 70 min</div>
+          </div>
+          <div class="service-item">
+            <div class="service-title">Ultimate Facial</div>
+            <div class="service-meta">$200 • 80 min</div>
+          </div>
+          <div class="service-item">
+            <div class="service-title">Collagen Boosting</div>
+            <div class="service-meta">$245</div>
+          </div>
+          <div class="service-item">
+            <div class="service-title">Firm Lift</div>
+            <div class="service-meta">$285</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Massage</h2>
+        <div class="section-rule"></div>
+        <div class="massage-groups">
+          <div class="massage-group">
+            <div class="massage-title">Swedish Massage</div>
+            <div class="massage-rates">
+              <div class="massage-rate">$99 | 60 min</div>
+              <div class="massage-rate">$139 | 90 min</div>
+              <div class="massage-rate">$179 | 120 min</div>
+            </div>
+          </div>
+          <div class="massage-group">
+            <div class="massage-title">Deep Tissue Massage</div>
+            <div class="massage-rates">
+              <div class="massage-rate">$109 | 60 min</div>
+              <div class="massage-rate">$159 | 90 min</div>
+              <div class="massage-rate">$189 | 120 min</div>
+            </div>
+          </div>
+          <div class="massage-group">
+            <div class="massage-title">Four Hands Massage</div>
+            <div class="massage-rates">
+              <div class="massage-rate">$189 | 60 min</div>
+              <div class="massage-rate">$269 | 90 min</div>
+              <div class="massage-rate">$349 | 120 min</div>
+            </div>
+          </div>
+          <div class="massage-group">
+            <div class="massage-title">Lomi Lomi / Sports / Thai</div>
+            <div class="massage-rates">
+              <div class="massage-rate">$109 | 60 min</div>
+              <div class="massage-rate">$149 | 90 min</div>
+              <div class="massage-rate">$189 | 120 min</div>
+            </div>
+          </div>
+          <div class="massage-group">
+            <div class="massage-title">Lymphatic Drainage</div>
+            <div class="massage-rates">
+              <div class="massage-rate">$119 | 60 min</div>
+              <div class="massage-rate">$169 | 90 min</div>
+            </div>
+          </div>
+          <div class="massage-group">
+            <div class="massage-title">Prenatal Massage</div>
+            <div class="massage-rates">
+              <div class="massage-rate">$119 | 60 min</div>
+              <div class="massage-rate">$169 | 90 min</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Beauty &amp; Spa</h2>
+        <div class="section-rule"></div>
+        <div class="service-list">
+          <div class="service-item">
+            <div class="service-title">Head Therapy</div>
+            <div class="service-meta">$119 • 60 min</div>
+          </div>
+          <div class="service-item">
+            <div class="service-title">Body Scrub + Vichy Shower</div>
+            <div class="service-meta">$99 • 30 min</div>
+            <div class="service-meta">$169 • 60 min</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="addons" aria-label="Add-ons">
+      <div class="addons-header">
+        <h3>Add Ons</h3>
+      </div>
+      <div class="addons-grid">
+        <div class="addon-item"><span>Hot Stone</span><span>$10</span></div>
+        <div class="addon-item"><span>CBD Oil</span><span>$15</span></div>
+        <div class="addon-item"><span>Herb Oil</span><span>$15</span></div>
+        <div class="addon-item"><span>Essential Oil</span><span>$10</span></div>
+        <div class="addon-item"><span>Table Shower</span><span>$20</span></div>
+        <div class="addon-item"><span>Cupping</span><span>$20</span></div>
+        <div class="addon-item"><span>Eye Spa Mask</span><span>$10</span></div>
+        <div class="addon-item"><span>Eye Spa Therapy</span><span>$20</span></div>
+        <div class="addon-item"><span>iRobot Massage</span><span>$10</span></div>
+      </div>
+    </section>
+
+    <aside class="banner">
+      Members receive <strong>15% OFF</strong> all services and free add-ons depending on membership tier.
+    </aside>
+  </main>
+</body>
+</html>
