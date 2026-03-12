@@ -43,12 +43,12 @@ const gallery = [
   {
     title: "Massage",
     image: "/assets/massage.jpg",
-    position: "center 46%",
+    position: "center 38%",
   },
   {
     title: "Beauty & Spa",
     image: "/assets/beauty-spa.jpg",
-    position: "center 56%",
+    position: "center 42%",
   },
 ];
 
