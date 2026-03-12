@@ -36,16 +36,21 @@ const addons = [
 
 const gallery = [
   {
+    title: "Facials",
     image:
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1552511556-9f16dcb6561f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDN8fCUyN3BvcmUlMjBwdXJyaWZpY2F0aW9uJTIwdHJlYXRtZW50JTI3fGVufDB8MHx8fDE3NjM0OTA3ODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    position: "center 35%",
   },
   {
+    title: "Massage",
     image:
-      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1570174006382-148305ce4972?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDR8fCUyN3JlanV2ZW5hdGlvbiUyMG1hc3NhZ2UlMjBWaWVubmElMjd8ZW58MHwwfHx8MTc2MjM2MzMyNXww&ixlib=rb-4.1.0&q=80&w=1080",
+    position: "center 45%",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80",
+    title: "Beauty & Spa",
+    image: "https://www.meridianspas.com/cdn/shop/files/cascade2_395x320.jpg?v=1768332676",
+    position: "center",
   },
 ];
 
@@ -53,19 +58,22 @@ export default function App() {
   return (
     <main className="screen">
       <header className="header">
+        <img className="brand-logo" src="/logo-mark.svg" alt="YD Day Spa logo" />
         <p className="eyebrow">Wellness Menu</p>
         <h1>YD DAY SPA</h1>
       </header>
 
       <p className="subtitle">Luxury Wellness Experience</p>
 
-      <section className="gallery" aria-label="Spa atmosphere photos">
+      <section className="gallery" aria-label="Service category photos">
         {gallery.map((item, index) => (
           <article
             className="photo-card"
             key={index}
-            style={{ "--image": `url('${item.image}')` }}
-          />
+            style={{ "--image": `url('${item.image}')`, "--position": item.position }}
+          >
+            <span className="photo-label">{item.title}</span>
+          </article>
         ))}
       </section>
 
