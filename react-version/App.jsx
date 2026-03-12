@@ -38,20 +38,20 @@ const gallery = [
   {
     title: "Facials",
     image: "/assets/facial.jpg",
-    position: "center 36%",
+    position: "center 42%",
     fit: "cover",
   },
   {
     title: "Massage",
     image: "/assets/massage.jpg",
-    position: "center 44%",
-    fit: "contain",
+    position: "center 48%",
+    fit: "cover",
   },
   {
     title: "Beauty & Spa",
     image: "/assets/beauty-spa.jpg",
     position: "center 46%",
-    fit: "contain",
+    fit: "cover",
   },
 ];
 
