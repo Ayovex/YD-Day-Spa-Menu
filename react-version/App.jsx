@@ -38,19 +38,19 @@ const gallery = [
   {
     title: "Facials",
     image:
-      "https://images.unsplash.com/photo-1706802423400-2b5f2d9c7d0d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "https://images.pexels.com/photos/34930153/pexels-photo-34930153.jpeg?auto=compress&cs=tinysrgb&w=1200",
     position: "center 45%",
   },
   {
     title: "Massage",
     image:
-      "https://images.unsplash.com/photo-1685608031445-5f5e52ecdd8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "https://images.pexels.com/photos/4599405/pexels-photo-4599405.jpeg?auto=compress&cs=tinysrgb&w=1200",
     position: "center 52%",
   },
   {
     title: "Beauty & Spa",
-    image: "https://images.unsplash.com/photo-1662466489395-4ea2f3fa57ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    position: "center 46%",
+    image: "https://images.pexels.com/photos/9155584/pexels-photo-9155584.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    position: "center 52%",
   },
 ];
 
