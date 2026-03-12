@@ -38,19 +38,19 @@ const gallery = [
   {
     title: "Facials",
     image:
-      "https://images.unsplash.com/photo-1643402305704-474b129161a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    position: "center 42%",
+      "https://images.unsplash.com/photo-1706802423400-2b5f2d9c7d0d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    position: "center 45%",
   },
   {
     title: "Massage",
     image:
-      "https://images.unsplash.com/photo-1649751295468-953038600bef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "https://images.unsplash.com/photo-1685608031445-5f5e52ecdd8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     position: "center 52%",
   },
   {
     title: "Beauty & Spa",
-    image: "https://www.meridianspas.com/cdn/shop/files/cascade2_395x320.jpg?v=1768332676",
-    position: "center 40%",
+    image: "https://images.unsplash.com/photo-1662466489395-4ea2f3fa57ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    position: "center 46%",
   },
 ];
 
