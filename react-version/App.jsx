@@ -38,17 +38,20 @@ const gallery = [
   {
     title: "Facials",
     image: "/assets/facial.jpg",
-    position: "center 40%",
+    position: "center 36%",
+    fit: "cover",
   },
   {
     title: "Massage",
     image: "/assets/massage.jpg",
-    position: "center 38%",
+    position: "center 44%",
+    fit: "contain",
   },
   {
     title: "Beauty & Spa",
     image: "/assets/beauty-spa.jpg",
-    position: "center 42%",
+    position: "center 46%",
+    fit: "contain",
   },
 ];
 
@@ -67,7 +70,11 @@ export default function App() {
           <article
             className="photo-card"
             key={index}
-            style={{ "--image": `url('${item.image}')`, "--position": item.position }}
+            style={{
+              "--image": `url('${item.image}')`,
+              "--position": item.position,
+              "--fit": item.fit,
+            }}
           >
             <span className="photo-label">{item.title}</span>
           </article>

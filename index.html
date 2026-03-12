@@ -103,6 +103,7 @@
       align-items: flex-end;
       overflow: hidden;
       border-radius: 20px;
+      background: linear-gradient(180deg, rgba(237, 232, 224, 0.96), rgba(219, 210, 196, 0.92));
       box-shadow: 0 10px 26px rgba(47, 38, 21, 0.06);
       isolation: isolate;
       transition: transform 220ms ease, box-shadow 220ms ease;
@@ -120,8 +121,9 @@
       background:
         linear-gradient(180deg, rgba(12, 11, 9, 0.04) 0%, rgba(12, 11, 9, 0.58) 100%),
         var(--image);
-      background-size: cover;
+      background-size: var(--fit, cover);
       background-position: var(--position, center);
+      background-repeat: no-repeat;
       filter: saturate(0.9) brightness(0.96);
       transition: transform 280ms ease;
       z-index: -2;
@@ -405,15 +407,15 @@
     <section class="gallery" aria-label="Service category photos">
       <article
         class="photo-card"
-        style="--image: url('./assets/facial.jpg'); --position: center 40%;"
+        style="--image: url('./assets/facial.jpg'); --position: center 36%; --fit: cover;"
       ><span class="photo-label">Facials</span></article>
       <article
         class="photo-card"
-        style="--image: url('./assets/massage.jpg'); --position: center 38%;"
+        style="--image: url('./assets/massage.jpg'); --position: center 44%; --fit: contain;"
       ><span class="photo-label">Massage</span></article>
       <article
         class="photo-card"
-        style="--image: url('./assets/beauty-spa.jpg'); --position: center 42%;"
+        style="--image: url('./assets/beauty-spa.jpg'); --position: center 46%; --fit: contain;"
       ><span class="photo-label">Beauty &amp; Spa</span></article>
     </section>
 
